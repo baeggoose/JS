@@ -1,1 +1,1 @@
-# Redux_practice
+# Java Script
