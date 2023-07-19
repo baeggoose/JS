@@ -5,17 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <h1 id="hello">Hello</h1>
-    <h1 id="IAM">I'm a penguin</h1>
-
-    <script>
-      document.getElementById("hello").innerHTML = "bye";
-      document.getElementById("hello").style.color = "red";
-
-      document.getElementById("IAM").innerHTML = "baeggoose";
-      document.getElementById("IAM").style.fontSize = "16px";
-    </script>
+    <div class="alert-box" id="alert">
+      알림창
+      <button
+        onclick="document.getElementById('alert').style.display = 'none';"
+      >
+        닫기
+      </button>
+    </div>
+    <button onclick="document.getElementById('alert').style.display = 'block';">
+      버튼
+    </button>
   </body>
 </html>
