@@ -9,15 +9,19 @@
   </head>
   <body>
     <div class="alert-box" id="alert">
-      <p>알림창</p>
-      <button onclick="Open('none');">닫기</button>
+      <p id="text">알림창</p>
+      <button id="close">닫기</button>
     </div>
-    <button onclick="Open('block')">버튼1</button>
-    <button onclick="Open('block')">버튼2</button>
+    <button onclick="show('아이디를 입력하세요')">버튼1</button>
+    <button onclick="show('비밀번호를 입력하세요')">버튼2</button>
 
     <script>
-      function Open(hole) {
-        document.getElementById("alert").style.display = hole;
+      document.getElementById("close").addEventListener("click", function () {
+        document.getElementById("alert").style.display = "none";
+      });
+      function show(input) {
+        document.getElementById("text").innerHTML = input;
+        document.getElementById("alert").style.display = "block";
       }
     </script>
   </body>
