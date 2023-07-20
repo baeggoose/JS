@@ -7,7 +7,10 @@
 }
 
 .list-group {
-  display: none;
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s;
 }
 
 .black-bg {
@@ -28,7 +31,8 @@
 }
 
 .show {
-  display: block;
+  visibility: visible;
+  max-height: 400px;
 }
 
 .show-modal {
