@@ -17,7 +17,7 @@
       referrerpolicy="no-referrer"
     ></script>
   </head>
-  <body>
+  <body class="dark">
     <div class="black-bg">
       <div class="white-bg">
         <h4>로그인하세요</h4>
@@ -59,8 +59,17 @@
         count++;
         if (count % 2 == 0) {
           $(".badge").html("Dark 🌙");
+          $(".badge").addClass("dark");
+          $(".badge").addClass("bg-dark");
+          $(".dark").css("background-color", "black");
         } else {
           $(".badge").html("Light 🌞");
+          $(".badge").removeClass("bg-dark");
+          $(".badge").addClass("bg-light");
+          $(".badge").removeClass("dark");
+          $(".dark").css("background-color", "white");
+          // $(".nabvar").removeClass("bg-light");
+          // $(".nabvar").addClass("bg-dark");
         }
       });
 

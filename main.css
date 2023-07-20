@@ -1,3 +1,8 @@
+.dark {
+  background: black;
+  color: white;
+}
+
 .alert-box {
   background-color: skyblue;
   padding: 20px;
@@ -38,4 +43,8 @@
 .show-modal {
   visibility: visible;
   opacity: 1;
+}
+
+.bg-light {
+  color: white;
 }
