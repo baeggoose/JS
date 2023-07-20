@@ -37,12 +37,12 @@
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
         <span class="navbar-brand">Navbar</span>
+        <span class="badge bg-dark ms-auto mx-3">Dark 🌙</span>
         <button class="navbar-toggler" type="button">
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
     </nav>
-
     <ul class="list-group">
       <li class="list-group-item">An item</li>
       <li class="list-group-item">A second item</li>
@@ -54,6 +54,16 @@
     <button id="login">Login</button>
 
     <script>
+      var count = 0;
+      $(".badge").on("click", function () {
+        count++;
+        if (count % 2 == 0) {
+          $(".badge").html("Dark 🌙");
+        } else {
+          $(".badge").html("Light 🌞");
+        }
+      });
+
       $(".navbar-toggler").on("click", function () {
         $(".list-group").toggleClass("show");
       });
