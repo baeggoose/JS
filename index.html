@@ -61,6 +61,26 @@
       <span class="countDown">5</span>초 이내 구매시 사은품 증정
     </div>
 
+    <div style="overflow: hidden">
+      <div class="slide-container">
+        <div class="slide-box">
+          <img src="penguin.jpg" alt="펭귄" />
+        </div>
+        <div class="slide-box">
+          <img src="duck.jpg" alt="오리" />
+        </div>
+        <div class="slide-box">
+          <img src="wing.jpg" alt="날개를 펼친 펭귄" />
+        </div>
+      </div>
+    </div>
+
+    <button class="slide-before">이전</button>
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
+    <button class="slide-next">다음</button>
+
     <script>
       setTimeout(function () {
         $(".alert").hide();
@@ -118,6 +138,27 @@
         } else if (/[A - Z]/.test(password) == false) {
           alert("비밀번호에 대문자를 포함해주세요");
           e.preventDefault();
+        }
+      });
+
+      var currnetSlide = 1;
+
+      $(".slide-1").on("click", function () {
+        $(".slide-container").css("transform", "translateX(0vW)");
+      });
+      $(".slide-2").on("click", function () {
+        $(".slide-container").css("transform", "translateX(-100vW)");
+      });
+      $(".slide-3").on("click", function () {
+        $(".slide-container").css("transform", "translateX(-200vW)");
+      });
+      $(".slide-next").on("click", function () {
+        if (currnetSlide == 1) {
+          $(".slide-container").css("transform", "translateX(-100vW)");
+          currnetSlide++;
+        } else if (currnetSlide == 2) {
+          $(".slide-container").css("transform", "translateX(-200vW)");
+          currnetSlide++;
         }
       });
     </script>
