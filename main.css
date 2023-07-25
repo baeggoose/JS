@@ -1,14 +1,24 @@
-.dark {
-  background: black;
-  color: white;
-}
-
-.alert-box {
+/* .alert-box {
   background-color: skyblue;
   padding: 20px;
   color: white;
   border-radius: 5px;
   display: none;
+} */
+
+.dark {
+  background: black;
+  color: white;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+}
+.navbar-brand {
+  font-size: 30px;
+  transition: all 1s;
 }
 
 .list-group {
@@ -16,6 +26,11 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.8s;
+}
+
+.main-bg {
+  padding: 100px 20px;
+  background: lightblue;
 }
 
 .black-bg {
@@ -31,6 +46,7 @@
 }
 .white-bg {
   background: white;
+  color: black;
   border-radius: 5px;
   padding: 30px;
 }
