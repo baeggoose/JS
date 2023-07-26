@@ -86,7 +86,7 @@
     <button class="slide-3">3</button>
     <button class="slide-next">다음</button>
 
-    <!-- membership -->
+    <!-- membership scroll event -->
     <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident facere
       exercitationem amet at reprehenderit esse libero rem velit, nobis dolore,
@@ -114,6 +114,16 @@
           $(".dark").css("background-color", "white");
           // $(".nabvar").removeClass("bg-light");
           // $(".nabvar").addClass("bg-dark");
+        }
+      });
+
+      // nav scroll event
+      $(window).on("scroll", function () {
+        var scrollH = $(window).scrollTop();
+        if (scrollH >= 100) {
+          $(".navbar-brand").css("font-size", "20px");
+        } else {
+          $(".navbar-brand").css("font-size", "30px");
         }
       });
 
@@ -191,21 +201,14 @@
         );
       });
 
-      // membership
+      // membership scrollevent
       $(".lorem").on("scroll", function () {
+        var scrolltop = document.querySelector(".lorem").scrollTop;
+        var scrollheight = document.querySelector(".lorem").scrollHeight;
+        var clientheight = document.querySelector(".lorem").clientHeight;
         // console.log($(".lorem").scrollHeight(), "약관높이");
-        if ($(".lorem").scrollTop() == 140) {
+        if (scrolltop + clientheight > scrollheight - 10) {
           alert("약관 다 읽음");
-        }
-      });
-
-      // scroll event
-      $(window).on("scroll", function () {
-        var scrollH = $(window).scrollTop();
-        if (scrollH >= 100) {
-          $(".navbar-brand").css("font-size", "20px");
-        } else {
-          $(".navbar-brand").css("font-size", "30px");
         }
       });
     </script>
