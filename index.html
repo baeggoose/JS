@@ -37,11 +37,6 @@
       <li class="list-group-item">And a fifth one</li>
     </ul>
 
-    <!-- main page, Login button -->
-    <div class="main-bg">
-      <h4>JS on Sale</h4>
-      <button id="login" class="btn btn-danger">Login</button>
-    </div>
     <!-- login modal -->
     <div class="black-bg">
       <div class="white-bg">
@@ -57,6 +52,11 @@
           <button type="button" class="btn btn-danger" id="close">닫기</button>
         </form>
       </div>
+    </div>
+    <!-- main page, Login button -->
+    <div class="main-bg">
+      <h4>JS on Sale</h4>
+      <button id="login" class="btn btn-danger">Login</button>
     </div>
 
     <!-- 5sec.countdown -->
@@ -135,6 +135,12 @@
       // login modal
       $("#login, #close").on("click", function () {
         $(".black-bg").toggleClass("show-modal");
+      });
+
+      $(".black-bg").on("click", function (e) {
+        if ($(e.target).is($(".black-bg"))) {
+          $(".black-bg").removeClass("show-modal");
+        }
       });
 
       $("form").on("submit", function (e) {
