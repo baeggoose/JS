@@ -113,7 +113,24 @@
         });
         $(".row").html("");
         products.forEach((a, i) => {
-          var 템플릿 = `<div>상품명은 ${products[i].title}</div>`;
+          var 템플릿 = `<div class="col-sm-4">
+        <img src="https://via.placeholder.com/600" class="w-100">
+        <h5> ${products[i].title}</h5>
+        <p>가격 : ${products[i].price}</p></div>`;
+          $(".row").append(템플릿);
+        });
+      });
+
+      // 6만원 이하 정렬
+      $("#filter").click(function () {
+        var newProduct = products.filter((a) => a.price <= 60000);
+        $(".row").html("");
+        newProduct.forEach((a, i) => {
+          var 템플릿 = `<div class="col-sm-4">
+        <img src="https://via.placeholder.com/600" class="w-100">
+        <h5>${newProduct[i].title}</h5>
+        <p>가격 : ${newProduct[i].price}</p>
+      </div>`;
           $(".row").append(템플릿);
         });
       });
