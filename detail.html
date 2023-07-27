@@ -60,7 +60,6 @@
       var car2 = { name: "소나타", price: [50000, 3000, 4000] };
       document.querySelector(".car-title").innerHTML = car2.name;
       document.querySelector(".car-price").innerHTML = car2.price[0];
-      console.log(car2.price[0]);
 
       // select
       var pants = [28, 30, 32, 34];
@@ -83,6 +82,11 @@
             });
           }
         });
+
+      // Q. 다음 url로 GET요청을 해서 가격정보를 가져와 콘솔창에 출력해보십시오.
+      // $.get("https://codingapple1.github.io/price.json").done(function (data) {
+      //   console.log(data);
+      // });
     </script>
 
     <script src="tab.js"></script>
