@@ -68,13 +68,13 @@
     <div style="overflow: hidden">
       <div class="slide-container">
         <div class="slide-box">
-          <img src="wing.jpg" alt="날개를 펼친 펭귄" />
+          <img src="wing.jpg" alt="날개를 펼친 펭귄" draggable="false" />
         </div>
         <div class="slide-box">
-          <img src="duck.jpg" alt="오리" />
+          <img src="duck.jpg" alt="오리" draggable="false" />
         </div>
         <div class="slide-box">
-          <img src="penguin.jpg" alt="펭귄" />
+          <img src="penguin.jpg" alt="펭귄" draggable="false" />
         </div>
       </div>
     </div>
@@ -175,6 +175,35 @@
           $(".countDown").html(countDownNum);
         }
       }, 1000);
+
+      // carousel drag scroll
+      var startX = 0;
+      var mouseDrag = false;
+
+      $(".slide-box")
+        .eq(0)
+        .on("mousedown", function (e) {
+          startX = e.clientX;
+          mouseDrag = true;
+        });
+
+      $(".slide-box")
+        .eq(0)
+        .on("mousemove", function (e) {
+          // console.log(e.clientX - startX);
+          if (mouseDrag === true) {
+            $(".slide-container").css(
+              "transform",
+              `translateX( ${e.clientX - startX}px )`
+            );
+          }
+        });
+
+      $(".slide-box")
+        .eq(0)
+        .on("mouseup", function (e) {
+          mouseDrag = false;
+        });
 
       // carousel
       var slideCount = 3;
