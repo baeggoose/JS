@@ -101,15 +101,6 @@ function 시간의흐름() {
     }
 
     dino.draw();
-  } else {
-    // 게임 오버 상태에서 메시지 그리기
-    ctx.fillStyle = "black";
-    ctx.font = "30px Arial";
-    ctx.fillText(
-      "Game Over! Press Space to Restart",
-      document.documentElement.clientWidth / 4,
-      document.documentElement.clientHeight / 2
-    );
   }
 }
 
@@ -126,14 +117,23 @@ function 충돌하냐(dino, cactus) {
   var y축차이 = cactus.y - (dino.y + dino.height);
 
   if (x축차이 < 0 && y축차이 < 0) {
-    ctx.clearRect(
-      0,
-      0,
-      document.documentElement.clientWidth,
-      document.documentElement.clientHeight
-    );
+    // ctx.clearRect(
+    //   0,
+    //   0,
+    //   document.documentElement.clientWidth,
+    //   document.documentElement.clientHeight
+    // );
     cancelAnimationFrame(animate);
     gameOver = true;
+    console.log("Game Over Message");
+    // 게임 오버 상태에서 메시지 그리기
+    ctx.fillStyle = "black";
+    ctx.font = "30px Arial";
+    ctx.fillText(
+      "부딪혔대요~! 스페이스바를 누르면 재시작!",
+      document.documentElement.clientWidth / 4,
+      document.documentElement.clientHeight / 2
+    );
   }
 }
 
