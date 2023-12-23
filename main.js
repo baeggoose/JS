@@ -152,3 +152,24 @@ document.addEventListener("keydown", function (e) {
     점프중 = true;
   }
 });
+
+document.addEventListener("keydown", function (e) {
+  if ((e.code === "Space" || e.type === "touchstart") && gameOver) {
+    // 게임 오버 상태에서 스페이스바를 누르거나 화면을 터치하면 게임 재시작
+    cactus여러개 = [];
+    timer = 0;
+    dino.reset();
+    시간의흐름();
+    gameOver = false;
+  } else if ((e.code === "Space" || e.type === "touchstart") && !gameOver) {
+    // 스페이스바를 누르거나 화면을 터치하면 점프
+    점프중 = true;
+  }
+});
+
+// 추가: 화면을 터치했을 때도 점프
+canvas.addEventListener("touchstart", function () {
+  if (!gameOver) {
+    점프중 = true;
+  }
+});
