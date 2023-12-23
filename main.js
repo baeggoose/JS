@@ -139,23 +139,10 @@ function 충돌하냐(dino, cactus) {
 
 var 점프중 = false;
 
-// 스페이스바 누르면
-document.addEventListener("keydown", function (e) {
+// 키 다운 및 터치 시작 이벤트 처리
+function handleInput(e) {
   if ((e.code === "Space" || e.type === "touchstart") && gameOver) {
     // 게임 오버 상태에서 스페이스바를 누르면 게임 재시작
-    cactus여러개 = [];
-    timer = 0;
-    dino.reset();
-    시간의흐름();
-    gameOver = false;
-  } else if (e.code === "Space" && !gameOver) {
-    점프중 = true;
-  }
-});
-
-document.addEventListener("keydown", function (e) {
-  if ((e.code === "Space" || e.type === "touchstart") && gameOver) {
-    // 게임 오버 상태에서 스페이스바를 누르거나 화면을 터치하면 게임 재시작
     cactus여러개 = [];
     timer = 0;
     dino.reset();
@@ -165,11 +152,43 @@ document.addEventListener("keydown", function (e) {
     // 스페이스바를 누르거나 화면을 터치하면 점프
     점프중 = true;
   }
-});
+}
 
-// 추가: 화면을 터치했을 때도 점프
-canvas.addEventListener("touchstart", function () {
-  if (!gameOver) {
-    점프중 = true;
-  }
-});
+// 스페이스바 및 터치 이벤트에 대한 통합된 이벤트 리스너 등록
+document.addEventListener("keydown", handleInput);
+canvas.addEventListener("touchstart", handleInput);
+
+// // 스페이스바 누르면
+// document.addEventListener("keydown", function (e) {
+//   if ((e.code === "Space" || e.type === "touchstart") && gameOver) {
+//     // 게임 오버 상태에서 스페이스바를 누르면 게임 재시작
+//     cactus여러개 = [];
+//     timer = 0;
+//     dino.reset();
+//     시간의흐름();
+//     gameOver = false;
+//   } else if (e.code === "Space" && !gameOver) {
+//     점프중 = true;
+//   }
+// });
+
+// document.addEventListener("keydown", function (e) {
+//   if ((e.code === "Space" || e.type === "touchstart") && gameOver) {
+//     // 게임 오버 상태에서 스페이스바를 누르거나 화면을 터치하면 게임 재시작
+//     cactus여러개 = [];
+//     timer = 0;
+//     dino.reset();
+//     시간의흐름();
+//     gameOver = false;
+//   } else if ((e.code === "Space" || e.type === "touchstart") && !gameOver) {
+//     // 스페이스바를 누르거나 화면을 터치하면 점프
+//     점프중 = true;
+//   }
+// });
+
+// // 추가: 화면을 터치했을 때도 점프
+// canvas.addEventListener("touchstart", function () {
+//   if (!gameOver) {
+//     점프중 = true;
+//   }
+// });
