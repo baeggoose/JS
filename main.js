@@ -130,7 +130,7 @@ function 충돌하냐(dino, cactus) {
     ctx.fillStyle = "black";
     ctx.font = "30px Arial";
     ctx.fillText(
-      "부딪혔대요~! 스페이스바를 누르면 재시작!",
+      "부딪혔대요~! 스페이스바 또는 터치하면 재시작!",
       document.documentElement.clientWidth / 4,
       document.documentElement.clientHeight / 2
     );
@@ -141,7 +141,7 @@ var 점프중 = false;
 
 // 스페이스바 누르면
 document.addEventListener("keydown", function (e) {
-  if (e.code === "Space" && gameOver) {
+  if ((e.code === "Space" || e.type === "touchstart") && gameOver) {
     // 게임 오버 상태에서 스페이스바를 누르면 게임 재시작
     cactus여러개 = [];
     timer = 0;
